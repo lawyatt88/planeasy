@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome} from './components'
+import {Login, Signup, UserHome, HowItWorks, Home} from './components'
 import {me} from './store'
 
 /**
@@ -13,22 +13,45 @@ class Routes extends Component {
     this.props.loadInitialData()
   }
 
+  renderMergedProps = (component, ...rest) => {
+    const finalProps = Object.assign({}, ...rest)
+    return React.createElement(component, finalProps)
+  }
+
+  PropsRoute = ({component, ...rest}) => {
+    return (
+      <Route
+        {...rest}
+        render={routeProps => {
+          return this.renderMergedProps(component, routeProps, rest)
+        }}
+      />
+    )
+  }
+
   render() {
     const {isLoggedIn} = this.props
+    const PropsRoute = this.PropsRoute
 
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <PropsRoute path="/login" component={Login} />
+        <PropsRoute path="/signup" component={Signup} />
+        <PropsRoute
+          path="/how-it-works"
+          component={HowItWorks}
+          navHeight={this.props.navHeight}
+        />
+        <PropsRoute path="/home" component={Home} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={UserHome} />
+            <PropsRoute path="/home" component={UserHome} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        <PropsRoute component={Home} navHeight={this.props.navHeight} />
       </Switch>
     )
   }

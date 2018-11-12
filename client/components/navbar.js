@@ -2,31 +2,54 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {Nav, Navbar, NavItem} from 'react-bootstrap'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <h1>BOILERMAKER</h1>
-    <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )}
-    </nav>
-    <hr />
-  </div>
-)
+class MainNav extends React.Component {
+  render() {
+    const {handleClick, isLoggedIn} = this.props
+    return (
+      <div
+        ref={this.props.refCallback}
+        style={{
+          position: 'absolute',
+          width: '100vw',
+          backgroundColor: 'white',
+          zIndex: 10
+        }}
+      >
+        <Navbar fluid fixedTop className="navbar-light bg-light">
+          <Navbar.Header>
+            <Navbar.Brand>
+              <Link className="navbar-brand" to="/home">
+                <img alt="PlanEasy" src="./images/planeasyAsset 1.png" />
+              </Link>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+              {isLoggedIn && (
+                <a href="#" onClick={handleClick}>
+                  Logout
+                </a>
+              )}
+              <NavItem eventKey={1} href="/how-it-works">
+                How It Works
+              </NavItem>
+              {/* <NavItem eventKey={2} href="/login">
+                Login
+              </NavItem> */}
+              <NavItem eventKey={2} href="/">
+                Sign Up
+              </NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+    )
+  }
+}
 
 /**
  * CONTAINER
@@ -45,12 +68,12 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch)(MainNav)
 
 /**
  * PROP TYPES
  */
-Navbar.propTypes = {
+MainNav.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
