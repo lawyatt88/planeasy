@@ -28,20 +28,31 @@ class MainNav extends React.Component {
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
+            <Nav>
+              <NavItem eventKey={1} href="/">
+                Home
+              </NavItem>
+              <NavItem eventKey={2} href="/how-it-works">
+                How It Works
+              </NavItem>
+              <NavItem eventKey={3} href="/featured-trips">
+                Featured Trips
+              </NavItem>
+            </Nav>
             <Nav pullRight>
               {isLoggedIn && (
                 <a href="#" onClick={handleClick}>
                   Logout
                 </a>
               )}
-              <NavItem eventKey={1} href="/how-it-works">
-                How It Works
+              <NavItem eventKey={4} href="/contact">
+                Contact
               </NavItem>
-              {/* <NavItem eventKey={2} href="/login">
-                Login
-              </NavItem> */}
-              <NavItem eventKey={2} href="/">
-                Sign Up
+              <NavItem eventKey={5} href="/login">
+                Sign In
+              </NavItem>
+              <NavItem eventKey={6} href="/">
+                Plan My Trip
               </NavItem>
             </Nav>
           </Navbar.Collapse>

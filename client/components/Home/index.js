@@ -259,58 +259,7 @@ class Home extends Component {
           </Carousel>
           <Button href="/featured-trips">View Featured Trips</Button>
         </Row>
-        <div className="section contact row d-flex align-items-stretch">
-          <div className="col-12 col-md-5 contact-img" />
-          <div className="col-12 col-md-5 col-md-offset-6 contact-content">
-            <h5 />
-            <ul className="list-inline social-icons">
-              <li className="connect">Let's Connect!</li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/lemona-wyatt/"
-                  target="_blank"
-                >
-                  <svg
-                    className="svg-inline--fa fa-w-16"
-                    version="1.1"
-                    id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="40px"
-                    height="40px"
-                    viewBox="14 14 40 40"
-                    enableBackground="new 14 14 40 40"
-                    xmlSpace="preserve"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M45.225,43.425v-7.809c0-4.183-2.233-6.129-5.21-6.129c-2.403,0-3.48,1.322-4.08,2.249v-1.929h-4.527
-                                    c0.061,1.278,0,13.618,0,13.618h4.527v-7.605c0-0.406,0.029-0.813,0.149-1.104c0.327-0.813,1.071-1.655,2.321-1.655
-                                    c1.639,0,2.293,1.249,2.293,3.079v7.285H45.225L45.225,43.425z M26.639,27.948c1.578,0,2.562-1.046,2.562-2.354
-                                    c-0.029-1.336-0.983-2.352-2.531-2.352s-2.561,1.016-2.561,2.352c0,1.307,0.982,2.354,2.502,2.354H26.639z M34,54
-                                    c-11.045,0-20-8.954-20-20s8.955-20,20-20c11.046,0,20,8.954,20,20S45.046,54,34,54z M28.903,43.425V29.807h-4.526v13.618H28.903z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/lawyatt88" target="_blank">
-                  <i className="fab fa-github" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://plus.google.com/u/0/113298364825465357558"
-                  target="_blank"
-                >
-                  <i className="fab fa-google-plus" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div className="section contact row d-flex align-items-stretch" />
       </div>
     )
   }

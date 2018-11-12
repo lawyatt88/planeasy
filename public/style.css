@@ -26,7 +26,9 @@ nav a {
 
 .navbar-default .navbar-nav > li > a {
   font-size: 16px;
-  color: #53adab !important;
+  font-family: 'Oswald-light';
+  text-transform: uppercase;
+  color: #728699 !important;
 }
 
 .navbar > .container-fluid .navbar-brand {
@@ -45,9 +47,17 @@ nav a {
   margin: 15px !important;
 }
 
+.navbar-header {
+  float: left !important;
+  text-align: center !important;
+  width: 100% !important;
+  position: absolute !important;
+}
+
 .navbar-brand {
   padding: 0 !important;
   height: auto !important;
+  float: none !important;
 }
 
 .navbar-brand > img {
@@ -358,6 +368,12 @@ div[class*='stack']:before {
   }
   .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .navbar-header {
+    width: auto !important;
+  }
+  .navbar-brand {
+    float: left !important;
   }
   .projects h4 {
     font-size: 1.25rem;
