@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {css} from 'glamor'
+import {Button, Carousel} from 'react-bootstrap'
 import ProjectCard from './projectCard'
 import {Col, Row} from '../StyledComponents/createCustomComponent'
-import {Button, Carousel} from 'react-bootstrap'
+import Photostack from './photostack'
 
 const arrow = css({
   paddingLeft: '0 !important'
@@ -34,6 +35,14 @@ const para = css({
   fontFamily: 'Assistant-light',
   textAlign: `center`,
   lineHeight: `1.75;`
+})
+
+const leftPara = css({
+  fontSize: `18px;`,
+  paddingTop: `1.75em`,
+  marginBottom: '0',
+  fontFamily: 'Assistant',
+  lineHeight: `1.75`
 })
 
 const testimonials = css({
@@ -96,6 +105,58 @@ const quotation = css({
   width: 'fit-content',
   marginTop: 0
 })
+
+const imagesWrapper = css({
+  padding: '5%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  justifyContent: 'space-around'
+})
+
+const imageStacks = [
+  {
+    imgUrl: '/images/porscha6.jpg',
+    rotateImg: '3',
+    margin: '20px',
+    background: {rotate: '3'},
+    width: '200px',
+    height: '130px'
+  },
+  {
+    imgUrl: '/images/porscha4.jpg',
+    rotateImg: '-3',
+    margin: '20px',
+    background: {rotate: '3'},
+    width: '150px',
+    height: '170px'
+  },
+  {
+    imgUrl: '/images/porscha3.jpg',
+    rotateImg: '3',
+    margin: '20px',
+    background: {rotate: '3'},
+    width: '150px',
+    height: '150px'
+  },
+  {
+    imgUrl: '/images/porscha2.jpg',
+    rotateImg: '-3',
+    margin: '20px',
+    background: {rotate: '-3'},
+    width: '200px',
+    height: '130px'
+  },
+  {
+    imgUrl: '/images/porscha.jpg',
+    rotateImg: '3',
+    margin: '20px',
+    background: {rotate: '-3'},
+    width: '150px',
+    height: '180px'
+  }
+]
 /**
  * sections: hero, about, testimonies/trip pics, what you get>sample, meet Porscha,
  */
@@ -176,13 +237,6 @@ class Home extends Component {
               </svg>
             </Col>
           </div>
-          {/* <div
-            id="arrow-wrapper"
-            className="col-12 d-flex flex-column align-items-center mt-auto p-2"
-          >
-            <h4>Check out my work!</h4>
-            <div className="arrow bounce" onClick={this.scrollToFeatured} />
-          </div> */}
         </div>
         <Row
           id="why-choose-us"
@@ -234,11 +288,6 @@ class Home extends Component {
                   </Col>
                 </Col>
                 <div className="stackone">
-                  {/* <img
-                    style={{maxWidth: 450, height: 'auto'}}
-                    alt="900x500"
-                    src="/images/adventure-boy-camping-450441.jpg"
-                  /> */}
                   <div
                     style={{
                       width: '450px',
@@ -259,7 +308,52 @@ class Home extends Component {
           </Carousel>
           <Button href="/featured-trips">View Featured Trips</Button>
         </Row>
-        <div className="section contact row d-flex align-items-stretch" />
+        <Row className="section contact row d-flex align-items-stretch">
+          <Row
+            style={{
+              maxWidth: '1200px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
+            <Col
+              className="founder-img"
+              md={4}
+              mdOffset={1}
+              sm={4}
+              smOffset={1}
+            >
+              <img src="/images/porscha5.jpg" />
+            </Col>
+            <Col md={6} sm={6}>
+              <h4 className="subheading">meet our founder</h4>
+              <h1 className="heading">A Message From Porcsha Daniels</h1>
+              <h4 className="subheading">
+                attorney, travel aficionado, foodie
+              </h4>
+              <p className={leftPara}>
+                <b>
+                  Plan Easy was founded out of a passion for world travel and a
+                  vision to provide travelers with a customized hassle free
+                  travel experience.
+                </b>
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                dolovelit esse molestie consequat, vel illum dolore eu feugiat.
+              </p>
+            </Col>
+          </Row>
+          <Col className={imagesWrapper} md={12}>
+            {imageStacks.map(stackProps => <Photostack {...stackProps} />)}
+          </Col>
+        </Row>
       </div>
     )
   }
