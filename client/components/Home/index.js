@@ -208,18 +208,24 @@ class Home extends Component {
           className="banner row flex align-items-stretch"
         >
           <div className="banner-text col-12">
-            <Col className={arrow.toString()} xs={12} sm={9} md={6}>
+            <Col smHidden mdHidden lgHidden xlHidden>
+              <h2
+                className="subtitle"
+                style={{
+                  color: '#146789',
+                  padding: '30px',
+                  textAlign: 'center',
+                  lineHeight: '1.5'
+                }}
+              >
+                CURATED TRIP PLANNING TO MAKE TRAVEL EASY
+              </h2>
+            </Col>
+            <Col className={arrow.toString()} xsHidden sm={9} md={6}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 670.14 68.25"
-                className="banner-arrow"
               >
-                <defs>
-                  {/* <style>
-                    {`.cls-1 { fill:none;stroke:#99d6d7;stroke-miterlimit:10;stroke-width:2px;}`}
-                    {`.cls-2{fill:#99d6d7;}`}
-                  </style> */}
-                </defs>
                 <title>planeasyAsset 1sign-arrow</title>
                 <g id="Layer_2" data-name="Layer 2">
                   <g id="Home_Screen" data-name="Home Screen">
