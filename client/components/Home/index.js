@@ -273,14 +273,7 @@ class Home extends Component {
         </div>
         <Row id="why-choose-us" ref="why" className={`section ${whyUs}`}>
           <Col xs={12} sm={10} smOffset={1} md={6} mdOffset={3}>
-            <Col
-              className={infoBox}
-              xs={12}
-              sm={10}
-              smOffset={1}
-              md={6}
-              mdOffset={3}
-            >
+            <Col className={infoBox}>
               <h1 className="title">why choose us?</h1>
               <h3 className="subtitle">
                 We handle as much or as little as you need
