@@ -32,7 +32,8 @@ const infoBox = css({
 const para = css({
   fontSize: `18px;`,
   padding: `1.75em`,
-  fontFamily: 'Assistant-light',
+  fontFamily: `'Assistant', san-serif`,
+  fontWeight: 300,
   textAlign: `center`,
   lineHeight: `1.75;`
 })
@@ -102,7 +103,8 @@ const quote = css({
 
 const quotation = css({
   fontSize: '100px',
-  fontFamily: 'Assistant-light',
+  fontFamily: `'Assistant', san-serif`,
+  fontWeight: 300,
   width: 'fit-content',
   marginTop: 0
 })
