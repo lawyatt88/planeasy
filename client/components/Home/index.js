@@ -93,7 +93,8 @@ const detailCardInner = css({
 
 const quote = css({
   padding: '0 30px',
-  fontFamily: 'Oswald-light',
+  fontFamily: `'Oswald', san-serif`,
+  fontWeight: 300,
   display: 'flex',
   alignItems: 'flex-start',
   fontSize: '20px'
