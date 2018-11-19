@@ -107,6 +107,24 @@ const quotation = css({
   marginTop: 0
 })
 
+const founderWrapper = css({
+  maxWidth: '1200px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  display: 'flex',
+  alignItems: 'center',
+  '@media only screen and (max-width: 576px)': {
+    display: 'block'
+  }
+})
+
+const founderImg = css({
+  width: '100%',
+  '@media only screen and (max-width: 576px)': {
+    paddingBottom: '20px'
+  }
+})
+
 const imagesWrapper = css({
   padding: '5%',
   display: 'flex',
@@ -310,25 +328,11 @@ class Home extends Component {
           <Button href="/featured-trips">View Featured Trips</Button>
         </Row>
         <Row className="section contact row d-flex align-items-stretch">
-          <Row
-            style={{
-              maxWidth: '1200px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              display: 'flex',
-              alignItems: 'center'
-            }}
-          >
-            <Col
-              className="founder-img"
-              md={4}
-              mdOffset={1}
-              sm={4}
-              smOffset={1}
-            >
-              <img src="/images/porscha5.jpg" />
+          <Row className={founderWrapper}>
+            <Col md={4} mdOffset={1} sm={4} smOffset={1} xs={12}>
+              <img className={founderImg} src="/images/porscha5.jpg" />
             </Col>
-            <Col md={6} sm={6}>
+            <Col md={6} sm={6} xs={12}>
               <h4 className="subheading">meet our founder</h4>
               <h1 className="heading">A Message From Porcsha Daniels</h1>
               <h4 className="subheading">
