@@ -26,7 +26,10 @@ const infoBox = css({
   justifyContent: 'center',
   display: 'flex',
   flexDirection: 'column',
-  alignContent: 'center'
+  alignContent: 'center',
+  '@media only screen and (max-width: 576px)': {
+    padding: '0 10px 20px'
+  }
 })
 
 const para = css({
@@ -35,7 +38,10 @@ const para = css({
   fontFamily: `'Assistant', san-serif`,
   fontWeight: 300,
   textAlign: `center`,
-  lineHeight: `1.75;`
+  lineHeight: `1.75;`,
+  '@media only screen and (max-width: 576px)': {
+    padding: '1.75em 0px'
+  }
 })
 
 const leftPara = css({
@@ -83,7 +89,10 @@ const detailCard = css({
   alignItems: 'stretch',
   alignContent: 'space-between',
   margin: '20px',
-  boxShadow: `5px 3px 10px rgba(0, 0, 0, .8)`
+  boxShadow: `5px 3px 10px rgba(0, 0, 0, .8)`,
+  '@media only screen and (max-width: 576px)': {
+    margin: '0'
+  }
 })
 
 const detailCardInner = css({
@@ -98,7 +107,10 @@ const quote = css({
   fontWeight: 300,
   display: 'flex',
   alignItems: 'flex-start',
-  fontSize: '20px'
+  fontSize: '20px',
+  '@media only screen and (max-width: 576px)': {
+    padding: '0 10px 10px 0'
+  }
 })
 
 const quotation = css({
@@ -259,35 +271,33 @@ class Home extends Component {
             </Col>
           </div>
         </div>
-        <Row
-          id="why-choose-us"
-          ref="why"
-          className={`section ${whyUs} d-flex align-items-stretch`}
-        >
-          <Col
-            className={infoBox}
-            xs={12}
-            sm={10}
-            smOffset={1}
-            md={6}
-            mdOffset={3}
-          >
-            <h1 className="title">why choose us?</h1>
-            <h3 className="subtitle">
-              We handle as much or as little as you need
-            </h3>
-            <p className={para}>
-              From booking your flights and accommodations, to setting up tours
-              and excursions, or simply providing dinner recommendations, when
-              it comes to planning your dream trip, there’s no task too big or
-              small.
-            </p>
-            <div className="image-container">
-              <img src="/images/why_1.svg" />
-              <img src="/images/why_2.svg" />
-              <img src="/images/why_3.svg" />
-            </div>
-            <Button href="/how-it-works">Learn How It Works</Button>
+        <Row id="why-choose-us" ref="why" className={`section ${whyUs}`}>
+          <Col xs={12} sm={10} smOffset={1} md={6} mdOffset={3}>
+            <Col
+              className={infoBox}
+              xs={12}
+              sm={10}
+              smOffset={1}
+              md={6}
+              mdOffset={3}
+            >
+              <h1 className="title">why choose us?</h1>
+              <h3 className="subtitle">
+                We handle as much or as little as you need
+              </h3>
+              <p className={para}>
+                From booking your flights and accommodations, to setting up
+                tours and excursions, or simply providing dinner
+                recommendations, when it comes to planning your dream trip,
+                there’s no task too big or small.
+              </p>
+              <div className="image-container">
+                <img src="/images/why_1.svg" />
+                <img src="/images/why_2.svg" />
+                <img src="/images/why_3.svg" />
+              </div>
+              <Button href="/how-it-works">Learn How It Works</Button>
+            </Col>
           </Col>
         </Row>
         <Row className={`section ${testimonials} testimonials`}>
